@@ -38,6 +38,13 @@ pipeline {
             }
         }
 
+        stage("Pushing to ECR"){
+            step{
+                script{
+                    tag.push()
+                }
+            }
+        }
+
     }
 }
-
