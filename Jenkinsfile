@@ -15,7 +15,7 @@ pipeline {
             steps{
                 script{
                     // Load default region
-                    infraRegion()               
+                    infraRegion.infraRegion()               
                 }
             }
         }
@@ -24,7 +24,7 @@ pipeline {
             steps{
                 script{
                 // login to aws ECR
-                    awsLogin()
+                    awsLogin.awsLogin()
                 }
             }
         }
