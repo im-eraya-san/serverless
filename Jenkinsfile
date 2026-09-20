@@ -39,7 +39,7 @@ pipeline {
         }
 
         stage("Pushing to ECR"){
-            step{
+            steps{
                 script{
                     tag.push()
                 }
