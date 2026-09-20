@@ -46,5 +46,14 @@ pipeline {
             }
         }
 
+        stage("Cleaning image after push to ECR"){
+            steps{
+                script{
+                    tag.clean()
+                }
+            }
+        }
+
+
     }
 }

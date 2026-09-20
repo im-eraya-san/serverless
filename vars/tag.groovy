@@ -13,3 +13,12 @@ def push(){
         sh "docker push ${imgName}:${env.BUILD_ID}"
     }
 }
+
+
+def clean(){
+    withCredentials([
+        string(credentialsId: 'AC-ID', variable: 'imgName')
+    ]){ 
+        sh "docker rmi -f ${imgName}:${env.BUILD_ID}"
+    }
+}
