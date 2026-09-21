@@ -32,7 +32,7 @@ pipeline {
         stage("Create local image"){
             steps{
                script{
-                    sh 'docker build -t $LOCAL_IMAGE_NAME .'
+                    sh 'docker buildx build --provenance=false --sbom=false --platform linux/amd64 -t $LOCAL_IMAGE_NAME .'
                     tag(env.LOCAL_IMAGE_NAME)
                }
             }
