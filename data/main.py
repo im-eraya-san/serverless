@@ -35,7 +35,8 @@ def getOsInfo():
 @app.route("/")
 def main():
    _result = sqlConnection()
-   sn = getOsInfo()
+   #sn = getOsInfo()
+   sn = ""
    if _result:
        return render_template('index.html',result='Database connected',srvName=sn)
    else:
